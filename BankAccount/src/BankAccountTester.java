@@ -24,7 +24,7 @@ public class BankAccountTester
       sallysChecking.withdraw(700);
       sallysChecking.withdraw(700);
 
-      //This line calls the getBalance method and prints it     
+      //This line calls the getBalance method and prints it   
       System.out.println(harrysChecking.getBalance());
       System.out.println("Expected: 1500");  
       System.out.println(sallysChecking.getBalance());
