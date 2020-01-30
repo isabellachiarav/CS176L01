@@ -21,7 +21,7 @@ public class CashRegister {
 		payment += paymentAmount;
 	}
 	
-	//giveChange will calculate and return the amount of change due to the customer (purchase - payment)
+	//giveChange will calculate and return the amount of change due to the customer 
 	public double giveChange() {
 		return change = payment - purchase;
 	}
