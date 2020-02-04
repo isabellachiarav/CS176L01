@@ -10,6 +10,7 @@ public class CashRegisterTester {
 		final int SENTINEL = -1;
 		boolean purchaseLoop = true;
 		NumberFormat fmt = NumberFormat.getCurrencyInstance();
+		final double DISCOUNT = .10, MINIMUMPURCHASE = 50;
 		
 		//create a CashRegister object
 		CashRegister register1 = new CashRegister();
@@ -22,12 +23,15 @@ public class CashRegisterTester {
 			sale = scan.nextDouble();
 		}
 		
+		//calculate discount
+		register1.calcDiscount(DISCOUNT, MINIMUMPURCHASE);
+		
 		//accept payment for the purchases
-		System.out.println("Enter payment: ");
+		System.out.print("Enter payment: ");
 		paymentAmount = scan.nextDouble();
 		register1.receivePayment(paymentAmount);
 		
-		//calculate and print the amount of change due to the customer
+		//calculate and print the amount of change due to the customer 
 		System.out.println("Your change: " + fmt.format(register1.giveChange()));
 
 	}

@@ -1,9 +1,11 @@
+import java.text.NumberFormat;
 
 public class CashRegister {
 
 	private double payment;
 	private double purchase;
-	double change;
+	double change, purchaseDiscount;
+	NumberFormat fmt = NumberFormat.getCurrencyInstance();
 	
 	//constructor to create a cash register with purchase = 0 and payment = 0
 	public CashRegister() {
@@ -24,6 +26,15 @@ public class CashRegister {
 	//giveChange will calculate and return the amount of change due to the customer 
 	public double giveChange() {
 		return change = payment - purchase;
+	}
+	
+	public void calcDiscount(final double DISCOUNT, final double THRESHOLD) {
+		if (purchase >= THRESHOLD) {
+			purchaseDiscount = purchase * DISCOUNT;
+			System.out.println("Your total purchases were " + fmt.format(purchase) + " and because you spent at least " + fmt.format(THRESHOLD) 
+				+ ", you are entitled to a " + (DISCOUNT * 100) + " discount of " + fmt.format(purchaseDiscount) + " reducing your balance to " 
+				+ fmt.format(purchase - purchaseDiscount) + ".");
+		}
 	}
 	
 	
